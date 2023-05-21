@@ -2,8 +2,6 @@
 
 
 
-
-
 void inputFile(char *fileName){
     int x, y, Testes, LIN, COL;
     FILE *file;
@@ -32,22 +30,17 @@ void inputFile(char *fileName){
             visited[i] = visited[0] + i * COL ;
         }
         for (int l =0; l < LIN; l++){
-        for (int c =0; c < COL; c++){
-            int aux;
-            fscanf(file, "%d", &aux);
-            matriz[l][c] = aux ;
-            visited[l][c] = 0;
-
+            for (int c =0; c < COL; c++){
+                int aux;
+                fscanf(file, "%d", &aux);
+                matriz[l][c] = aux ;
+                visited[l][c] = 0;
+            }
         }
-        }
-        for (int l =0; l < LIN; l++){
-        for (int c =0; c < COL; c++){
-
-            printf("%d ", visited[l][c]);
-        }
-        printf("\n");
-        }
-        printf("\n");
+        int resultado;
+        //int buscaEmProfundidade(int **matriz, int **visited, int LIN, int COL, int i, int j, int minNum, int sum, int minNumAbsoluto) {
+        resultado = buscaEmProfundidade(matriz, visited, LIN, COL, 0, 0, 1, 0, 9999);
+        printf("%d \n", resultado);
         free (matriz[0]) ;
         free (matriz) ;
         free (visited[0]) ;
