@@ -2,9 +2,9 @@
 
 all: main clean
 
-main: manipulaArquivos.o buscaEmProfundidade.o main.o
+main: manipulaArquivos.o buscaEmProfundidade.o programacaoDinamica.o main.o
 
-	gcc manipulaArquivos.o buscaEmProfundidade.o main.o -o main.out
+	gcc manipulaArquivos.o buscaEmProfundidade.o programacaoDinamica.o main.o -o main.out
 
 
 main.o: main.c ./headers/manipulaArquivos.h
@@ -15,6 +15,9 @@ manipulaArquivos.o: manipulaArquivos.c ./headers/manipulaArquivos.h
 
 buscaEmProfundidade.o: buscaEmProfundidade.c ./headers/buscaEmProfundidade.h
 	gcc -c buscaEmProfundidade.c
+
+programacaoDinamica.o: programacaoDinamica.c ./headers/programacaoDinamica.h
+	gcc -c programacaoDinamica.c
 
 clean:
 	rm *.o

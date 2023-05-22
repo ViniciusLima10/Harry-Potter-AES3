@@ -3,11 +3,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <limits.h>
 #include "./buscaEmProfundidade.h"
+#include "./programacaoDinamica.h"
 
-void teste();
-
-void inputFile(char *fileName);
+void outputFile(int numeroDeTabuleiros, int *resultados);
+void inputFile(char *fileName, int estrategia);
 
 #endif
